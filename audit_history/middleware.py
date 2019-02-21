@@ -34,7 +34,7 @@ class AuditHistoryMiddleware(MiddlewareMixin):
         )
         return None
 
-    def process_reqponse(self, request, response):
+    def process_response(self, request, response):
         data = response.content
         status_code = response.status_code
         AuditResponse.objects.create(
